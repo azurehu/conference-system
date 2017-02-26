@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>
+  <listener>
+  	<listener-class>com.chinasofti.meeting.listener.CounterListener</listener-class>
+  </listener>
+  <filter>
+  	<filter-name>LoginCookieFilter</filter-name>
+  	<filter-class>com.chinasofti.meeting.filter.LoginCookieFilter</filter-class>
+  </filter>
+  <filter>
+  	<filter-name>CharacterEncodingFilter</filter-name>
+  	<filter-class>com.chinasofti.meeting.filter.CharacterEncodingFilter</filter-class>
+  </filter>
+    <filter>
+  	<filter-name>LoginedFilter</filter-name>
+  	<filter-class>com.chinasofti.meeting.filter.LoginedFilter</filter-class>
+  </filter>
+  
+    <filter-mapping>
+  	<filter-name>LoginCookieFilter</filter-name>
+  	<url-pattern>/login.jsp</url-pattern>
+  	<dispatcher>REQUEST</dispatcher>
+  	<dispatcher>INCLUDE</dispatcher>
+  	<dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+    
+  <filter-mapping>
+  	<filter-name>CharacterEncodingFilter</filter-name>
+  	<url-pattern>*</url-pattern>
+  	<dispatcher>REQUEST</dispatcher>
+  	<dispatcher>INCLUDE</dispatcher>
+  	<dispatcher>ERROR</dispatcher>
+  	<dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>LoginedFilter</filter-name>
+  	<url-pattern>/adminindex.jsp</url-pattern>
+  	<dispatcher>REQUEST</dispatcher>
+  	<dispatcher>INCLUDE</dispatcher>
+  	<dispatcher>ERROR</dispatcher>
+  
+  </filter-mapping>
+    <filter-mapping>
+  	<filter-name>LoginedFilter</filter-name>
+  	<url-pattern>/employeeindex.jsp</url-pattern>
+  	<dispatcher>REQUEST</dispatcher>
+  	<dispatcher>INCLUDE</dispatcher>
+  	<dispatcher>ERROR</dispatcher>
+
+  </filter-mapping>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RegistServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.RegistServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViewAllDepartmentsServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.ViewAllDepartmentsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ValidateUsernameServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.ValidateUsernameServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViewAllEmployeesServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.ViewAllEmployeesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ApproveServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.ApproveServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddDeleteDepartmentServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.AddDeleteDepartmentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchEmployeesServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.SearchEmployeesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViewAllMeetingRoomsServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.ViewAllMeetingRoomsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViewOneMeetingRoomServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.ViewOneMeetingRoomServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateMeetingRoomServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.UpdateMeetingRoomServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddMeetingRoomServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.AddMeetingRoomServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>BookMeetingServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.BookMeetingServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SelectEmployeesOfDeptServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.SelectEmployeesOfDeptServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViewMyBookingServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.ViewMyBookingServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViewMyMeetingsServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.ViewMyMeetingsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViewMyBookingDetailServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.ViewMyBookingDetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CancelMeetingServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.CancelMeetingServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ViewMyMeetingDetailServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.ViewMyMeetingDetailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MyNotificationServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.MyNotificationServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RefreshRoomsServlet</servlet-name>
+    <servlet-class>com.chinasofti.meeting.servlet.RefreshRoomsServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegistServlet</servlet-name>
+    <url-pattern>/RegistServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewAllDepartmentsServlet</servlet-name>
+    <url-pattern>/ViewAllDepartmentsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ValidateUsernameServlet</servlet-name>
+    <url-pattern>/ValidateUsernameServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewAllEmployeesServlet</servlet-name>
+    <url-pattern>/ViewAllEmployeesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ApproveServlet</servlet-name>
+    <url-pattern>/ApproveServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddDeleteDepartmentServlet</servlet-name>
+    <url-pattern>/AddDeleteDepartmentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchEmployeesServlet</servlet-name>
+    <url-pattern>/SearchEmployeesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewAllMeetingRoomsServlet</servlet-name>
+    <url-pattern>/ViewAllMeetingRoomsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewOneMeetingRoomServlet</servlet-name>
+    <url-pattern>/ViewOneMeetingRoomServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateMeetingRoomServlet</servlet-name>
+    <url-pattern>/UpdateMeetingRoomServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddMeetingRoomServlet</servlet-name>
+    <url-pattern>/AddMeetingRoomServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BookMeetingServlet</servlet-name>
+    <url-pattern>/BookMeetingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SelectEmployeesOfDeptServlet</servlet-name>
+    <url-pattern>/SelectEmployeesOfDeptServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewMyBookingServlet</servlet-name>
+    <url-pattern>/ViewMyBookingServlet</url-pattern>
+  </servlet-mapping>	
+  <servlet-mapping>
+    <servlet-name>ViewMyMeetingsServlet</servlet-name>
+    <url-pattern>/ViewMyMeetingsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewMyBookingDetailServlet</servlet-name>
+    <url-pattern>/ViewMyBookingDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CancelMeetingServlet</servlet-name>
+    <url-pattern>/CancelMeetingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewMyMeetingDetailServlet</servlet-name>
+    <url-pattern>/ViewMyMeetingDetailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MyNotificationServlet</servlet-name>
+    <url-pattern>/MyNotificationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RefreshRoomsServlet</servlet-name>
+    <url-pattern>/RefreshRoomsServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <resource-ref> 
+      <description>DB Connection</description> 
+      <res-ref-name>jdbc/meeting</res-ref-name> 
+      <res-type>javax.sql.DataSource</res-type> 
+      <res-auth>Container</res-auth> 
+</resource-ref> 
+</web-app>
